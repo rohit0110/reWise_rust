@@ -1,9 +1,10 @@
 use serde::{Serialize, Deserialize};
+use crate::schema::notes;
 
-#[derive(Queryable, Serialize, Deserialize)]
+#[derive(Queryable, Insertable, Serialize, Deserialize)]
+#[diesel(table_name = crate::schema::notes)]
 pub struct Note {
     pub id: i32,
-    pub title: String,
     pub content: String,
-    pub created_by: String,
+    pub topic_id: i32,
 }
