@@ -1,0 +1,11 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5", features = ["json"] }
+diesel = { version = "1.4", features = ["postgres", "r2d2"] }
+dotenv = "0.15"
+tokio = { version = "1", features = ["full"] }
+serde = "1.0.217"
