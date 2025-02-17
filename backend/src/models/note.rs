@@ -8,3 +8,10 @@ pub struct Note {
     pub content: String,
     pub topic_id: i32,
 }
+
+#[derive(Serialize, Deserialize, Insertable)]
+#[table_name = "notes"]
+pub struct NewNote {
+    pub content: String,
+    pub topic_id: i32,
+}

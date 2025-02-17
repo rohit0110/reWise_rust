@@ -8,3 +8,10 @@ pub struct Topic {
     pub name: String,
     pub user_id: i32,
 }
+
+#[derive(Serialize, Deserialize, Insertable)]
+#[table_name = "topics"]
+pub struct NewTopic {
+    pub name: String,
+    pub user_id: i32,
+}

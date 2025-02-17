@@ -3,7 +3,8 @@
 
 use crate::db::db::establish_connection;
 use crate::routes::users_routes::{get_users,add_user};
-use crate::routes::notes_routes::get_notes;
+use crate::routes::notes_routes::{get_notes, add_note};
+use crate::routes::topics_routes::{get_topics,add_topic};
 
 mod db;
 mod models;
@@ -16,8 +17,13 @@ async fn rocket() -> _ {
         .manage(establish_connection())
         .mount("/", routes![
             get_users,
-            get_notes,
             add_user,
+
+            get_notes,
+            add_note,
+
+            get_topics,
+            add_topic,
             ])
 }
 
