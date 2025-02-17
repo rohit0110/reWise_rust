@@ -1,16 +1,13 @@
 #[macro_use] extern crate rocket;
 #[macro_use] extern crate diesel;
 
-use diesel::prelude::*;
-use rocket::State;
-use rocket::serde::json::Json;
-use crate::db::establish_connection;
-use crate::models::User;
-use crate::schema::users::dsl::*;
+use crate::db::db::establish_connection;
+use crate::routes::users_routes::get_users;
 
 mod db;
 mod models;
 mod schema;
+mod routes;
 
 #[launch]
 fn rocket() -> _ {
@@ -19,14 +16,3 @@ fn rocket() -> _ {
         .mount("/", routes![get_users])
 }
 
-#[get("/users")]
-async fn get_users(conn: &State<db::Pool>) -> Json<Vec<User>> {
-    let conn = conn.get().expect("Couldn't get db connection from pool");
-
-    // Proper query for loading users
-    let results = users
-        .load::<User>(&conn) 
-        .expect("Error loading users");
-
-    Json(results)
-}
