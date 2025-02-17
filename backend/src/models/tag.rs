@@ -7,3 +7,9 @@ pub struct Tag {
     pub id: i32,
     pub name: String,
 }
+
+#[derive(Deserialize)]
+pub struct NewTag {
+    pub name: String,
+    pub topic_id: i32,
+}
