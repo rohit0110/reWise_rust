@@ -1,6 +1,6 @@
 use rocket::serde::json::Json;
 use rocket::State;
-use crate::db::db::Pool;
+use crate::db::connection::Pool;
 use crate::models::tag::{Tag, NewTag};
 use crate::schema::tags::dsl::*;
 use crate::schema::{tags, topic_tags};

@@ -1,7 +1,7 @@
 // src/routes/user_routes.rs
 use rocket::serde::json::Json;
 use rocket::State;
-use crate::db::db::Pool;
+use crate::db::connection::Pool;
 use crate::models::note::{Note, NewNote};
 use crate::schema::notes::dsl::*;
 use crate::schema::notes;
