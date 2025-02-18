@@ -28,6 +28,7 @@ pub async fn add_note(conn: &State<Pool>, new_note: Json<NewNote>) -> Json<Note>
         .values((
             notes::content.eq(new_note.content.clone()),
             notes::topic_id.eq(new_note.topic_id),
+            notes::heading.eq(new_note.heading.clone()),
         ))
         .get_result(&conn)
         .expect("Error inserting new Note");

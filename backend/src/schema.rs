@@ -5,6 +5,7 @@ diesel::table! {
         id -> Int4,
         content -> Text,
         topic_id -> Int4,
+        heading -> Text,
     }
 }
 

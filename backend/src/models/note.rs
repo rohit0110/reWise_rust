@@ -7,6 +7,7 @@ pub struct Note {
     pub id: i32,
     pub content: String,
     pub topic_id: i32,
+    pub heading: String,
 }
 
 #[derive(Serialize, Deserialize, Insertable)]
@@ -14,4 +15,5 @@ pub struct Note {
 pub struct NewNote {
     pub content: String,
     pub topic_id: i32,
+    pub heading: String,
 }

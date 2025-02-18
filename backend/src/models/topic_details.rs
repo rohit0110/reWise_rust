@@ -11,6 +11,7 @@ pub struct TopicWithDetails {
 #[derive(Serialize)]
 pub struct NoteDetails {
     pub id: i32,
+    pub heading: String,
     pub content: String,
 }
 
